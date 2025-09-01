@@ -1,0 +1,28 @@
+touch class4.sh -> create a shell script
+chmod u+x class4.sh -> give permission to make class4 execuatable 
+
+inside file write this code for print hello world:
+
+#!bin/bash
+echo "hello world";
+
+./class4 -> to run this code 
+
+echo -e "\nkafi" -> create a new line before kafi
+echo "\n" -> this will not print newline it will be print as a string
+
+input number:
+echo "User input number:";
+read num;
+echo "number $num";
+echo "hi $1";
+
+./class4.sh kafi -> kafi is the input here , output will be hi kafi
+
+$(( )) -> use double bracket to calculate something 
+
+without space "=" -> value assign
+with space "=" -> string matching
+
+* -> print all in once
+@ -> print all in one by one

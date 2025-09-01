@@ -1,0 +1,123 @@
+pwd -> find my location
+
+ls -> show all file
+
+man mkdir -> see every cmd for mkdir
+
+mkdir Job/day1 -> create day1 inside Job folder
+
+ls job -> show all file inside job folder
+
+mkdir -p code/dsa -> if(code==exst)
+                        mkdir code/dsa
+                    else
+                        mkdir code
+                        cd code
+                        mkdir dsa
+
+mkdir -p parent/{a,b,c} -> create 3 child folder in parent
+
+-v -> what is the work behind cmd show in text
+
+mkdir -p -v Parent/{a,b,c} -> same work as next cmd 2 diffrent way
+mkdir -pv Parent/{a,b,c} -> same work as previous cmd 2 diffrent way
+
+rmdir -pv Parent/{a,b,c} -> if(p)
+                                delete all child including parent
+                            else
+                                delete only all childs
+
+touch   k.txt -> create empty file
+        k.pdf
+        k.ppt
+
+rmdir -> remove empty folder
+rm -> remove empty file
+rm -r kafi -> remove non empty directory
+
+ls -a -> show all folder including (. forword) (.. backword)
+ls -A -> show all folder without (. forword) (.. backword)
+ls -l -> show all detail for visable folders
+ls -al -> show all details for hidden and visable folders
+ls -S -> show all sorted file size in decrising order
+ls -lS -> show all sorted visable folder size in decrising order
+ls -als -> show all sorted visable and hidden folder size in decrising order
+
+ls and ls ~ are same
+
+ls *.txt -> every file ends with txt
+ls *s -> every folder/file ends with S
+ls -d *s -> every folder ends with S
+ls Downloads/*.ppt -> inside Download show all pile ends with .ppt
+
+ls -als > log.txt -> inside log.txt save all output 
+
+nano -> file edit
+nano log.txt -> modify/watch log.txt
+kwrite is a good alternative of nano
+
+file Downloads/ch6.ppt -> show all details (create time,device etc)
+file J.txt -> show all details 
+
+cat k1.txt -> show all ooutput of k1.txt
+cat -n k1.txt -> show output with line number
+cat -b k1.txt -> show output without empty line
+cat -E k1.txt -> adds $ end of the line
+cat k1.txt k2.txt -> show both file output
+cat -nE k1.txt k2.txt ->
+cat -bE k1.txt k2.txt ->
+cat > t1 -> create a file and edit it (by default txt file) for exit press ctrl + d 
+
+>= -> overwrite (if not exist create file)
+>>= -> Append
+
+target file/folder destination file/folder -> fopy in destination from target
+cat k1.txt k2.txt > hello.txt -> copy both file in hello.txt
+
+cp output.txt file1.txt -> copy output.txt in file.txt
+cp t1.txt something.txt -> if(something.txt != exist)
+                                create something.txt and paste t1.txt
+cp -r target folder destination folder -> copy in destination 
+
+mv file folder -> cut/paste
+mv file file1 -> (if not exist)
+                        rename
+                else
+                    move
+mv folder folder -> (if not exist)
+                        rename
+                    else
+                        move
+
+cp k1.txt k2.txt kafi -> copy both file and paste in kafi folder
+cp -r k1 k2 kafi -> copy both folder paste in kafi
+cp -ri something kafi -> need permission to overwite from user
+
+find *.txt -> show all file ends with .txt
+find code -type d -> find only directory
+
+wc s.txt -> show 3 values
+                1. number of lines
+                2. number of words
+                3. number of charecters
+wc -l s.txt -> only show lines
+wc -w s.txt -> only show words
+wc -c s.txt -> only show charecters
+
+head -3 s.txt -> show first 3 lines
+tail -3 s.txt -> show last 3 lines
+head -12 | tail -7 -> first 12 line last 7 line
+head -12 | tail -7 | wc -w -> count words between these lines
+
+cat out.txt | head -3 | wc -3 -> count first 3 lines words
+
+grep "like" out.txt -> show thoes line where like exist (case sensetive)
+grep -i "like" out.txt -> (case insensetive)
+grep -n "like" out.txt -> show with number
+grep -v "like" out.txt -> show without like lines
+grep "like" * -> check all file and fine if like exists
+grep -in "i" * -> 
+grep -niv "i" * > output.txt -> save in output.txt from all files if there is i exists
+head -10 s.txt | grep -n "in" -> first 10 lines "in"
+more s.txt -> show output for quit press q
+less s.txt -> show output in another window
