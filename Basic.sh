@@ -166,12 +166,87 @@ fi
 echo "---------------------------------------------------------"
 
 
+echo "Return value"
+add() {
+    sum=$(( $1 + $2 ))
+    echo "$sum"
+}
+
+result=$(add 7 8)
+echo "Sum is $result"
+
+
+factorial() {
+    if [ $1 -le 1 ]; then
+        echo 1
+    else
+        local temp=$(( $1 - 1 ))
+        local result=$(factorial $temp)
+        echo $(( $1 * result ))
+    fi
+}
+
+num=5
+result=$(factorial $num)
+echo "Factorial of $num is $result"
+
+
+
+factorial() {
+    local n=$1
+    local result=1
+    while [ $n -gt 1 ]; do
+        result=$((result * n))
+        n=$((n - 1))
+    done
+    echo $result
+}
+
+num=5
+result=$(factorial $num)
+echo "Factorial of $num is $result"
 
 
 
 
+fibonacci() {
+    if [ $1 -le 0 ]; then
+        echo 0
+    elif [ $1 -eq 1 ]; then
+        echo 1
+    else
+        local n1=$(fibonacci $(( $1 - 1 )))
+        local n2=$(fibonacci $(( $1 - 2 )))
+        echo $((n1 + n2))
+    fi
+}
+
+num=10
+result=$(fibonacci $num)
+echo "Fibonacci of $num is $result"
 
 
 
 
+fibonacci() {
+    local n=$1
+    local a=0
+    local b=1
 
+    if [ $n -eq 0 ]; then
+        echo 0
+        return
+    fi
+
+    for (( i=2; i<=n; i++ )); do
+        local temp=$((a + b))
+        a=$b
+        b=$temp
+    done
+
+    echo $b
+}
+
+num=10
+result=$(fibonacci $num)
+echo "Fibonacci of $num is $result"

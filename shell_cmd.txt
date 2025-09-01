@@ -59,7 +59,7 @@ kwrite is a good alternative of nano
 file Downloads/ch6.ppt -> show all details (create time,device etc)
 file J.txt -> show all details 
 
-cat k1.txt -> show all ooutput of k1.txt
+cat k1.txt -> show all output of k1.txt
 cat -n k1.txt -> show output with line number
 cat -b k1.txt -> show output without empty line
 cat -E k1.txt -> adds $ end of the line
